@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.header-right {
+    float: right;
+    line-height: 50px;
+}
+
+header, footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header input[type="search"] {
+    margin: 10px;
+    padding: 5px;
+}
+
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blog-post {
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: calc(50% - 20px); /* Adjusts the width to fit two posts side by side, accounting for margins */
+}
+
+.blog-post h2 {
+    color: #007bff;
+}
+
+.blog-post .date {
+    font-style: italic;
+}
+
+.continue-reading {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer p, footer a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    .posts-container {
+        flex-direction: column;
+    }
+    
+    .blog-post {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .header-right {
+        float: none;
+        line-height: normal;
+        text-align: center;
+    }
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
