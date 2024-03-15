@@ -182,7 +182,11 @@ class EventsModel {
     }
 
     getEventById(eventId) {
+      if (!isNaN(id)) {
         return this.events.find(event => event.id === Number(eventId)) || null;
+      } else {
+        return this.events.find(event => event.id === eventId) || null;
+      }
     }
 }
 class EventsController {
