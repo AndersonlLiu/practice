@@ -182,7 +182,7 @@ class EventsModel {
     }
 
     getEventById(eventId) {
-        return this.events.find(event => event.id === eventId) || null;
+        return this.events.find(event => event.id === Number(eventId)) || null;
     }
 }
 class EventsController {
@@ -235,7 +235,6 @@ class EventsController {
             const eventElem = elem.parentElement.parentElement;
             const deleteId = eventElem.id;
             await eventsAPI.deleteEvent(deleteId);
-            this.model.deleteEvent(deleteId);
             this.view.removeEventElem(deleteId);
           }
         });
@@ -246,10 +245,13 @@ class EventsController {
             const elem = e.target;
     
             if (elem.classList.contains("edit-btn")) {
+                console.log('edit')
                 const eventElem = elem.closest('tr');
                 const editId = eventElem.getAttribute('id');
+                console.log(editId)
+                console.log(this.model.events)
                 const event = this.model.getEventById(editId);
-    
+                console.log(event)
                 if (event) {
                     console.log('event', event);
                     eventElem.innerHTML = `
