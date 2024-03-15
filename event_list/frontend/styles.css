@@ -1,0 +1,41 @@
+/* 基本的重置和布局 */
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #f7f7f7; /* 页面背景颜色 */
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+}
+
+#add-event-btn {
+    margin-bottom: 20px;
+}
+
+.events-table {
+    border: 2px solid #ffc107;
+    width: 100%;
+    border-collapse: separate; /* 让单元格之间有间隙 */
+    border-spacing: 0 10px; /* 设置行之间的间隙 */
+    margin-bottom: 20px;
+}
+
+
+/* 表格头部单元格样式 */
+.events-table th {
+    padding: 10px;
+    text-align: center;
+}
+
+.events-table td {
+    padding: 10px;
+    background-color:#ffd54f;
+    border-style: solid;
+    border-width: 1px 0;
+    text-align: center;
+}
+
