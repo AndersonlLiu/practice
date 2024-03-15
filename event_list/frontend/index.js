@@ -235,7 +235,7 @@ class EventsController {
             const eventElem = elem.parentElement.parentElement;
             const deleteId = eventElem.id;
             await eventsAPI.deleteEvent(deleteId);
-            this.deleteEvent(deleteId);
+            this.model.deleteEvent(deleteId);
             this.view.removeEventElem(deleteId);
           }
         });
